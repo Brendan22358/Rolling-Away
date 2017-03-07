@@ -30,3 +30,4 @@ else:
 
 #Hello Mr.Gold
 #I need more commits
+#I don't know how to do true random so pls let me KNOW!!!
