@@ -1,5 +1,6 @@
 from random import randrange
 
+
 win1=0
 win2=0
 print("We are going to play a game called dice duels! Dice duels is a game where two players participate in rolling dice. The first player rolls and then the second, whoever\nhas the higher roll wins that round. It's a best of three games so whoever wins two rounds first wins the game.")
@@ -28,3 +29,4 @@ else:
 	print("Congrats! {} won the game with a score of {} to {}.".format(player2,win2,win1))
 
 #Hello Mr.Gold
+#I need more commits
