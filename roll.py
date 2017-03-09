@@ -8,11 +8,13 @@ player1=str(raw_input("Enter Player 1's name: "))
 player2=str(raw_input("Enter player 2's name: "))
 while(win1!=2 and win2!=2):
 	roll1=r.generate_integers(1,1,6)
+	output1=roll1[0]
 	player1roll=raw_input("{} type roll to roll!\n>".format(player1))
-	print("{} got {}.".format(player1,roll1))
+	print("{} got {}.".format(player1,output1))
 	roll2=r.generate_integers(1,1,6)
+	output2=roll2[0]
 	player2roll=raw_input("{} type roll to roll!\n>".format(player2))
-	print("{} got {}.".format(player2,roll2))
+	print("{} got {}.".format(player2,output2))
 	if(roll1>roll2):
 		print("Nice, {} one this round!".format(player1))
 		win1+=1
