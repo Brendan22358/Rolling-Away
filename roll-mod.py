@@ -144,7 +144,10 @@ while(win1!=3 and win2!=3):
 		win1+=1
 	if(highorlow1<highorlow2):
 		win2+=1
-	else:
+	if(highorlow1==highorlow2):
 		print("You both tied this round so no points for either side.")
 	print("Score is {} to {} ({} to {}).".format(win1,win2,player1,player2))
-	
+if(win1==3):
+	print("Congrats! {} won the game!".format(player1))
+else:
+	print("Congrats! {} won the game!".format(player2))
