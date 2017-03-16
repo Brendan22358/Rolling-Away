@@ -1,20 +1,21 @@
+from __future__ import print_function
 from random import randint
 player1=raw_input("Enter player 1's name: ")
-player2=raw_input("Enter player 2's name: ")
+player2=raw_input("\nEnter player 2's name: ")
 win1=0
 win2=0
-print("We are going to play a game called Dice Duels, except with different rules. Hint, There will be an easter egg can you find it?")
+print("\nWe are going to play a game called Dice Duels, except with different rules. Hint, There will be an easter egg can you find it? Remember,\n\nthe lower number wins over the bigger number, and each player will roll three dye per turn.")
 while(win1!=3 and win2!=3):
-	player1roll=raw_input("{} type roll to roll three dye.\n>".format(player1))
+	player1roll=raw_input("\n{} type roll to roll three dye.\n>".format(player1))
 	if(player1roll!="roll"):
-		player1roll=raw_input("{} type roll to roll three dye.\n>".format(player1))
-	roll1=[randint(1,7),randint(1,7),randint(1,7)]
-	print("{} got {}.".format(player1,roll1))
-	player2roll=raw_input("{} type roll to roll three dye.\n>".format(player2))
+		player1roll=raw_input("\n{} type roll to roll three dye.\n>".format(player1))
+	roll1=[randint(1,6),randint(1,6),randint(1,6)]
+	print("\n{} rolled {}.".format(player1,roll1))
+	player2roll=raw_input("\n{} type roll to roll three dye.\n>".format(player2))
 	if(player2roll!="roll"):
-		player2roll=raw_input("{} type roll to roll three dye.\n>".format(player2))
-	roll2=[randint(1,7),randint(1,7),randint(1,7)]
-	print("{} got {}.".format(player2,roll2))
+		player2roll=raw_input("\n{} type roll to roll three dye.\n>".format(player2))
+	roll2=[randint(1,6),randint(1,6),randint(1,6)]
+	print("\n{} rolled {}.".format(player2,roll2))
 	if(roll1[0]>roll1[1] and roll1[0]>roll1[2]):
 		high1=roll1[0]
 	if(roll1[0]<roll1[1] and roll1[0]<roll1[2]):
@@ -67,7 +68,11 @@ while(win1!=3 and win2!=3):
 		mid1=roll1[2]
 	if(roll1[2]<roll1[0] and roll1[2]>roll1[1]):
 		mid1=roll1[2]
-	print(high1,mid1,low1)
+	if(roll1[0]==roll1[1] and roll1[0]==roll1[2]):
+		high1=roll1[0]
+		mid1=roll1[1]
+		low1=roll1[2]
+	print("\n\nFor {}, the high number is {}, the middle number is {}, and the lowest number is {}.".format(player1,high1,mid1,low1))
 	if(roll2[0]>roll2[1] and roll2[0]>roll2[2]):
 		high2=roll2[0]
 	if(roll2[0]<roll2[1] and roll2[0]<roll2[2]):
@@ -125,7 +130,12 @@ while(win1!=3 and win2!=3):
 	if(roll2[2] == roll2[0] and roll2[2]<roll2[1]):
 		low2=roll2[0]
 		mid2=roll2[2]
-	print(high2,mid2,low2)
+	if(roll2[0]==roll2[1] and roll2[0]==roll2[2]):
+		high2=roll2[0]
+		mid2=roll2[1]
+		low2=roll2[2]
+	print("\n\nFor {}, the high number is {}, the middle number is {}, and the lowest number is {}.".format(player2,high2,mid2,low2))
+	
 	highorlow1=0
 	highorlow2=0
 	if(high1<high2):
@@ -145,9 +155,9 @@ while(win1!=3 and win2!=3):
 	if(highorlow1<highorlow2):
 		win2+=1
 	if(highorlow1==highorlow2):
-		print("You both tied this round so no points for either side.")
-	print("Score is {} to {} ({} to {}).".format(win1,win2,player1,player2))
+		print("\nYou both tied this round so no points for either side.")
+	print("\nScore is {} to {} ({} to {}).".format(win1,win2,player1,player2))
 if(win1==3):
-	print("Congrats! {} won the game!".format(player1))
+	print("\nCongrats! {} won the game!".format(player1))
 else:
-	print("Congrats! {} won the game!".format(player2))
+	print("\nCongrats! {} won the game!".format(player2))
