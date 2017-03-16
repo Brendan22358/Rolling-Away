@@ -9,11 +9,11 @@ while(win1!=3 and win2!=3):
 	if(player1roll!="roll"):
 		player1roll=raw_input("{} type roll to roll three dye.\n>".format(player1))
 	roll1=[randint(1,7),randint(1,7),randint(1,7)]
+	print("{} got {}.".format(player1,roll1))
 	player2roll=raw_input("{} type roll to roll three dye.\n>".format(player2))
 	if(player2roll!="roll"):
 		player2roll=raw_input("{} type roll to roll three dye.\n>".format(player2))
 	roll2=[randint(1,7),randint(1,7),randint(1,7)]
-	print("{} got {}.".format(player1,roll1))
 	print("{} got {}.".format(player2,roll2))
 	if(roll1[0]>roll1[1] and roll1[0]>roll1[2]):
 		high1=roll1[0]
@@ -33,6 +33,30 @@ while(win1!=3 and win2!=3):
 		mid1=roll1[1]
 	if(roll1[1]<roll1[0] and roll1[1]>roll1[2]):
 		mid1=roll1[1]
+
+	if(roll1[1]==roll1[0] and roll1[0]>roll1[2]):
+		high1=roll1[1]
+		mid1=roll1[0]
+	if(roll1[1] == roll1[0] and roll1[0]<roll1[2]):
+		low1=roll1[0]
+		mid1=roll1[1]
+
+	if(roll1[1]==roll1[2] and roll1[2]>roll1[0]):
+		high1=roll1[1]
+		mid1=roll1[2]
+	if(roll1[1] == roll1[2] and roll1[2]<roll1[0]):
+		low1=roll1[2]
+		mid1=roll1[1]
+	if(roll1[2]==roll1[0] and roll1[0]>roll1[1]):
+		high1=roll1[2]
+		mid1=roll1[0]
+	if(roll1[2] == roll1[0] and roll1[2]<roll1[1]):
+		low1=roll1[0]
+		mid1=roll1[2]
+	
+
+
+
 
 
 	if(roll1[2]>roll1[0] and roll1[2]>roll1[1]):
@@ -72,6 +96,55 @@ while(win1!=3 and win2!=3):
 		mid2=roll2[2]
 	if(roll2[2]<roll2[0] and roll2[2]>roll2[1]):
 		mid2=roll2[2]
-	print(high2,mid2,low2)
 
+	if(roll2[1]>roll2[0] and roll2[1]> roll2[2]):
+		high2=roll2[1]
+	if(roll2[1]<roll2[0] and roll2[1]<roll2[2]):
+		low2=roll2[1]
+	if(roll2[1]>roll2[0] and roll2[1]<roll2[2]):
+		mid2=roll2[1]
+	if(roll2[1]<roll2[0] and roll2[1]>roll2[2]):
+		mid2=roll2[1]
+
+	if(roll2[1]==roll2[0] and roll2[0]>roll2[2]):
+		high2=roll2[1]
+		mid2=roll2[0]
+	if(roll2[1] == roll2[0] and roll2[0]<roll2[2]):
+		low2=roll2[0]
+		mid2=roll2[1]
+
+	if(roll2[1]==roll2[2] and roll2[2]>roll2[0]):
+		high2=roll2[1]
+		mid2=roll2[2]
+	if(roll2[1] == roll2[2] and roll2[2]<roll2[0]):
+		low2=roll2[2]
+		mid2=roll2[1]
+	if(roll2[2]==roll2[0] and roll2[0]>roll2[1]):
+		high2=roll2[2]
+		mid2=roll2[0]
+	if(roll2[2] == roll2[0] and roll2[2]<roll2[1]):
+		low2=roll2[0]
+		mid2=roll2[2]
+	print(high2,mid2,low2)
+	highorlow1=0
+	highorlow2=0
+	if(high1<high2):
+		highorlow1+=1
+	if(high1>high2):
+		highorlow2+=1
+	if(mid1>mid2):
+		highorlow2+=1
+	if(mid1<mid2):
+		highorlow1+=1
+	if(low1<low2):
+		highorlow1+=1
+	if(low1>low2):
+		highorlow2+=1
+	if(highorlow1>highorlow2):
+		win1+=1
+	if(highorlow1<highorlow2):
+		win2+=1
+	else:
+		print("You both tied this round so no points for either side.")
+	print("Score is {} to {} ({} to {}).".format(win1,win2,player1,player2))
 	
