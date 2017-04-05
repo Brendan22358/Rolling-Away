@@ -4,7 +4,7 @@ player1=raw_input("Enter player 1's name: ")
 player2=raw_input("\nEnter player 2's name: ")
 win1=0
 win2=0
-print("\nWe are going to play a game called Dice Duels, except with different rules. Hint, There will be an easter egg can you find it? Remember,\n\nthe lower number wins over the bigger number, and each player will roll three dye per turn.")
+print("\nWe are going to play a game called Dice Duels, except with different rules. Hint, There will be an easter egg can you find it? Remember,\n\nthe lower number wins over the bigger number, and each player will roll three dye per turn, and if all three dye add up to seven that player wins the whole")
 while(win1!=3 and win2!=3):
 	player1roll=raw_input("\n{} type roll to roll three dye.\n>".format(player1))
 	while(player1roll!="roll" and player1roll!="Brendan is awesome"):
@@ -156,6 +156,10 @@ while(win1!=3 and win2!=3):
 		win2+=1
 	if(highorlow1==highorlow2):
 		print("\nYou both tied this round so no points for either side.")
+	if(high1+mid1+low1==7):
+		win1=3
+	if(high2+mid2+low2==7):
+		win2=3
 	print("\nScore is {} to {} ({} to {}).".format(win1,win2,player1,player2))
 if(win1==3):
 	print("\nCongrats! {} won the game!".format(player1))
