@@ -1,4 +1,4 @@
-from __future__ import print_function
+
 from random import randint
 player1=raw_input("Enter player 1's name: ")
 player2=raw_input("\nEnter player 2's name: ")
@@ -7,13 +7,13 @@ win2=0
 print("\nWe are going to play a game called Dice Duels, except with different rules. Hint, There will be an easter egg can you find it? Remember,\n\nthe lower number wins over the bigger number, and each player will roll three dye per turn.")
 while(win1!=3 and win2!=3):
 	player1roll=raw_input("\n{} type roll to roll three dye.\n>".format(player1))
-	if(player1roll!="roll"):
-		player1roll=raw_input("\n{} type roll to roll three dye.\n>".format(player1))
+	while(player1roll!="roll" and player1roll!="Brendan is awesome"):
+			player1roll=raw_input("\n{} type roll to roll three dye.\n>".format(player1))
 	roll1=[randint(1,6),randint(1,6),randint(1,6)]
 	print("\n{} rolled {}.".format(player1,roll1))
 	player2roll=raw_input("\n{} type roll to roll three dye.\n>".format(player2))
-	if(player2roll!="roll"):
-		player2roll=raw_input("\n{} type roll to roll three dye.\n>".format(player2))
+	while(player2roll!="roll" and player2roll!="Brendan is awesome"):
+		player2roll=raw_input("\n{} type roll to roll three dye. \n>".format(player2))
 	roll2=[randint(1,6),randint(1,6),randint(1,6)]
 	print("\n{} rolled {}.".format(player2,roll2))
 	if(roll1[0]>roll1[1] and roll1[0]>roll1[2]):
